@@ -4,23 +4,23 @@
 This is a small utility to keep track of your time spent in your projects.
 
 # Usage
+## Tasks and projects management
 Enter TUI
 ```bash
 rtt [-V] [h]
 ```
-## Project management
 
-Add a project
+Add a project or a task to it. If the project does not exists it will be created
 ```bash
-rtt create [-t "task name"=duration[m|h|d]] unique_project_name
+rtt create unique_project_name [-t "task name"=duration[m|h|d]]
 ```
 
-Delete a project
+Delete a project or a task. if a task is provided the project itself won't be deleted
 ```bash
-rtt delete [-f] unique_project_name
+rtt delete [-f] unique_project_name "task name"
 ```
 
-Show time spent on a project
+Show time spent on a project or on tasks
 ```
 rtt show [--pretty|-p] unique_project_name ["task name"] ["task2"]
 ```
@@ -29,19 +29,6 @@ Archive/Unarchive a project
 ```bash
 rtt archive unique_project_name
 rtt unarchive unique_project_name
-```
-
-## Tasks manipulation
-These commands will allow to manipulate time spent on projects' tasks
-
-Add a task to a project
-```bash
-rtt add [-t|--time 00m|h] unique_project_name "task name"
-```
-
-Delete a task from a project
-```bash
-rtt delete [-f] unique_project_name "task name"
 ```
 
 Amend time spent on a project
